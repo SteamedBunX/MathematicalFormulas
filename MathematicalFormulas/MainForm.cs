@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using static MathFunctions.MathFunctions;
+using static MathFunctions.MathFunctionsClass;
 
 namespace MathematicalFormulas
 {
@@ -23,19 +23,128 @@ namespace MathematicalFormulas
             InitializeComponent();
         }
 
-        private void textDiameter_TextChanged(object sender, EventArgs e)
+        // Radius check box changed
+        private void radioButtonRad_CheckedChanged(object sender, EventArgs e)
         {
-            
-            if (radioButtonDia.Checked)
+            if (radioButtonRad.Checked)
             {
-                // Make sure the text is parsable
-                if(Double.TryParse(textDiameter.Text, out cirDiameter))
+                // If nothing is in there the result will be 0
+                if (textRadius.Text.Length == 0)
                 {
-                    cirCirc = GetcCirArea(cirDiameter / 2);
-                    textCirCResult.Text = cirCirc.ToString();
+                    cirDiameter = 0;
+                    cirRadius = 0;
+                    textCirCResult.Text = "0";
+                    textCirAResult.Text = "0";
                 }
+                // Make sure the text is parsable
+                else if (Double.TryParse(textRadius.Text, out cirRadius))
+                {
+                    cirCirc = GetCirCirc(cirRadius);
+                    cirArea = GetCirArea(cirRadius);
+                    textCirCResult.Text = cirCirc.ToString();
+                    textCirAResult.Text = cirArea.ToString();
+                }
+                // Print warning massage if failed to work
                 else
                 {
+                    textCirCResult.Text = "0";
+                    textCirAResult.Text = "0";
+                    textWarningCir.Text = "Failed to parse the diameter.";
+                }
+            }
+        }
+
+        // Radius Text changed
+        private void textRadius_TextChanged(object sender, EventArgs e)
+        {
+            if (radioButtonRad.Checked)
+            {
+                // If nothing is in there the result will be 0
+                if (textRadius.Text.Length == 0)
+                {
+                    cirDiameter = 0;
+                    cirRadius = 0;
+                    textCirCResult.Text = "0";
+                    textCirAResult.Text = "0";
+                }
+                // Make sure the text is parsable
+                else if (Double.TryParse(textRadius.Text, out cirRadius))
+                {
+                    cirCirc = GetCirCirc(cirRadius);
+                    cirArea = GetCirArea(cirRadius);
+                    textCirCResult.Text = cirCirc.ToString();
+                    textCirAResult.Text = cirArea.ToString();
+                }
+                // Print warning massage if failed to work
+                else
+                {
+                    textCirCResult.Text = "0";
+                    textCirAResult.Text = "0";
+                    textWarningCir.Text = "Failed to parse the diameter.";
+                }
+            }
+        }
+
+        // Diameter check box changed
+        private void radioButtonDia_CheckedChanged(object sender, EventArgs e)
+        {
+            if (radioButtonDia.Checked)
+            {
+                // If nothing is in there the result will be 0
+                if (textDiameter.Text.Length == 0)
+                {
+                    cirDiameter = 0;
+                    cirRadius = 0;
+                    textCirCResult.Text = "0";
+                    textCirAResult.Text = "0";
+                }
+                // Make sure the text is parsable
+                else if (Double.TryParse(textDiameter.Text, out cirDiameter))
+                {
+                    cirRadius = cirDiameter / 2;
+                    cirCirc = GetCirCirc(cirRadius);
+                    cirArea = GetCirArea(cirRadius);
+                    textCirCResult.Text = cirCirc.ToString();
+                    textCirAResult.Text = cirArea.ToString();
+                }
+                // Print warning massage if failed to work
+                else
+                {
+                    textCirCResult.Text = "0";
+                    textCirAResult.Text = "0";
+                    textWarningCir.Text = "Failed to parse the diameter.";
+                }
+            }
+        }
+
+        // Diameter Text changed
+        private void textDiameter_TextChanged(object sender, EventArgs e)
+        {
+
+            if (radioButtonDia.Checked)
+            {
+                // If nothing is in there the result will be 0
+                if (textDiameter.Text.Length == 0)
+                {
+                    cirDiameter = 0;
+                    cirRadius = 0;
+                    textCirCResult.Text = "0";
+                    textCirAResult.Text = "0";
+                }
+                // Make sure the text is parsable
+                else if (Double.TryParse(textDiameter.Text, out cirDiameter))
+                {
+                    cirRadius = cirDiameter / 2;
+                    cirCirc = GetCirCirc(cirRadius);
+                    cirArea = GetCirArea(cirRadius);
+                    textCirCResult.Text = cirCirc.ToString();
+                    textCirAResult.Text = cirArea.ToString();
+                }
+                // Print warning massage if failed to work
+                else
+                {
+                    textCirCResult.Text = "0";
+                    textCirAResult.Text = "0";
                     textWarningCir.Text = "Failed to parse the diameter.";
                 }
             }
@@ -66,11 +175,6 @@ namespace MathematicalFormulas
                 textWarningCir.Text = "Length can only be positive numbers.";
                 e.Handled = true;
             }
-        }
-
-        private void textRadius_TextChanged(object sender, EventArgs e)
-        {
-
         }
 
         private void textRadius_KeyPress(object sender, KeyPressEventArgs e)

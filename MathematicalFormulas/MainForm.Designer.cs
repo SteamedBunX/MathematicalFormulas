@@ -149,6 +149,7 @@
             this.radioButtonRad.TabIndex = 9;
             this.radioButtonRad.TabStop = true;
             this.radioButtonRad.UseVisualStyleBackColor = true;
+            this.radioButtonRad.CheckedChanged += new System.EventHandler(this.radioButtonRad_CheckedChanged);
             // 
             // radioButtonDia
             // 
@@ -159,7 +160,7 @@
             this.radioButtonDia.TabIndex = 8;
             this.radioButtonDia.TabStop = true;
             this.radioButtonDia.UseVisualStyleBackColor = true;
-            // 
+            this.radioButtonDia.CheckedChanged += new System.EventHandler(this.radioButtonDia_CheckedChanged);            // 
             // textDiameter
             // 
             this.textDiameter.Location = new System.Drawing.Point(28, 160);

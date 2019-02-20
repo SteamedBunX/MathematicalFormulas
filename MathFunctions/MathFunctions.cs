@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace MathFunctions
 {
-    public class MathFunctions
+    public class MathFunctionsClass
     {
-        public static double GetcCirArea(double cirRad)
+        public static double GetCirArea(double cirRad)
         {
             return cirRad * cirRad * Math.PI;
         }
