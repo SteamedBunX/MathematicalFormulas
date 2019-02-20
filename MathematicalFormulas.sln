@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.28307.421
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MathematicalFormulas", "MathematicalFormulas\MathematicalFormulas.csproj", "{C8CD2665-857B-4A2B-B43E-2F928BD716C2}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MathFunctions", "MathFunctions\MathFunctions.csproj", "{5EFF8962-090E-4452-894F-11936384F52E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{C8CD2665-857B-4A2B-B43E-2F928BD716C2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C8CD2665-857B-4A2B-B43E-2F928BD716C2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C8CD2665-857B-4A2B-B43E-2F928BD716C2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5EFF8962-090E-4452-894F-11936384F52E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5EFF8962-090E-4452-894F-11936384F52E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5EFF8962-090E-4452-894F-11936384F52E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5EFF8962-090E-4452-894F-11936384F52E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
