@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using MathFunctions;
+using static MathFunctions.MathFunctions;
 
 namespace MathematicalFormulas
 {
@@ -31,7 +31,7 @@ namespace MathematicalFormulas
                 // Make sure the text is parsable
                 if(Double.TryParse(textDiameter.Text, out cirDiameter))
                 {
-                    cirCirc = 0.0;
+                    cirCirc = GetcCirArea(cirDiameter / 2);
                     textCirCResult.Text = cirCirc.ToString();
                 }
                 else
