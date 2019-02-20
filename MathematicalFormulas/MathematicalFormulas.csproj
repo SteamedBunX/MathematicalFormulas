@@ -82,6 +82,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="img\Circle.png" />
+    <None Include="Resources\hemisphere001.gif" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\MathFunctions\MathFunctions.csproj">

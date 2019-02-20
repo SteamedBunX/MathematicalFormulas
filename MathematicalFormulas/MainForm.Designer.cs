@@ -32,20 +32,27 @@
             this.tabPageCircle = new System.Windows.Forms.TabPage();
             this.textCirAResult = new System.Windows.Forms.TextBox();
             this.textCirCResult = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textTitleCir = new System.Windows.Forms.TextBox();
+            this.textTitleCirA = new System.Windows.Forms.TextBox();
+            this.textTitleCirC = new System.Windows.Forms.TextBox();
             this.textWarningCir = new System.Windows.Forms.TextBox();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.imgCircle = new System.Windows.Forms.Panel();
             this.radioButtonRad = new System.Windows.Forms.RadioButton();
             this.radioButtonDia = new System.Windows.Forms.RadioButton();
             this.textDiameter = new System.Windows.Forms.TextBox();
             this.textRadius = new System.Windows.Forms.TextBox();
             this.tabPageHemis = new System.Windows.Forms.TabPage();
+            this.textHemiVResult = new System.Windows.Forms.TextBox();
+            this.textTitleHemiV = new System.Windows.Forms.TextBox();
+            this.textWarningHemi = new System.Windows.Forms.TextBox();
+            this.imgHemisphere = new System.Windows.Forms.Panel();
+            this.textHemiRadius = new System.Windows.Forms.TextBox();
             this.tabPageTri = new System.Windows.Forms.TabPage();
             this.tabPageQuad = new System.Windows.Forms.TabPage();
             this.tab_Formulas.SuspendLayout();
             this.tabPageCircle.SuspendLayout();
-            this.panel1.SuspendLayout();
+            this.imgCircle.SuspendLayout();
+            this.tabPageHemis.SuspendLayout();
+            this.imgHemisphere.SuspendLayout();
             this.SuspendLayout();
             // 
             // tab_Formulas
@@ -64,10 +71,10 @@
             // 
             this.tabPageCircle.Controls.Add(this.textCirAResult);
             this.tabPageCircle.Controls.Add(this.textCirCResult);
-            this.tabPageCircle.Controls.Add(this.textBox1);
-            this.tabPageCircle.Controls.Add(this.textTitleCir);
+            this.tabPageCircle.Controls.Add(this.textTitleCirA);
+            this.tabPageCircle.Controls.Add(this.textTitleCirC);
             this.tabPageCircle.Controls.Add(this.textWarningCir);
-            this.tabPageCircle.Controls.Add(this.panel1);
+            this.tabPageCircle.Controls.Add(this.imgCircle);
             this.tabPageCircle.Location = new System.Drawing.Point(4, 25);
             this.tabPageCircle.Name = "tabPageCircle";
             this.tabPageCircle.Padding = new System.Windows.Forms.Padding(3);
@@ -83,6 +90,7 @@
             this.textCirAResult.ReadOnly = true;
             this.textCirAResult.Size = new System.Drawing.Size(170, 22);
             this.textCirAResult.TabIndex = 7;
+            this.textCirAResult.Text = "0";
             // 
             // textCirCResult
             // 
@@ -92,26 +100,27 @@
             this.textCirCResult.ReadOnly = true;
             this.textCirCResult.Size = new System.Drawing.Size(170, 22);
             this.textCirCResult.TabIndex = 6;
+            this.textCirCResult.Text = "0";
             // 
-            // textBox1
+            // textTitleCirA
             // 
-            this.textBox1.BackColor = System.Drawing.SystemColors.Control;
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox1.Location = new System.Drawing.Point(404, 123);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(96, 15);
-            this.textBox1.TabIndex = 5;
-            this.textBox1.Text = "Area:";
+            this.textTitleCirA.BackColor = System.Drawing.SystemColors.Control;
+            this.textTitleCirA.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textTitleCirA.Location = new System.Drawing.Point(404, 123);
+            this.textTitleCirA.Name = "textTitleCirA";
+            this.textTitleCirA.Size = new System.Drawing.Size(96, 15);
+            this.textTitleCirA.TabIndex = 5;
+            this.textTitleCirA.Text = "Area:";
             // 
-            // textTitleCir
+            // textTitleCirC
             // 
-            this.textTitleCir.BackColor = System.Drawing.SystemColors.Control;
-            this.textTitleCir.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textTitleCir.Location = new System.Drawing.Point(405, 23);
-            this.textTitleCir.Name = "textTitleCir";
-            this.textTitleCir.Size = new System.Drawing.Size(96, 15);
-            this.textTitleCir.TabIndex = 4;
-            this.textTitleCir.Text = "Circumferece:";
+            this.textTitleCirC.BackColor = System.Drawing.SystemColors.Control;
+            this.textTitleCirC.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textTitleCirC.Location = new System.Drawing.Point(405, 23);
+            this.textTitleCirC.Name = "textTitleCirC";
+            this.textTitleCirC.Size = new System.Drawing.Size(96, 15);
+            this.textTitleCirC.TabIndex = 4;
+            this.textTitleCirC.Text = "Circumferece:";
             // 
             // textWarningCir
             // 
@@ -126,18 +135,18 @@
             this.textWarningCir.Size = new System.Drawing.Size(188, 102);
             this.textWarningCir.TabIndex = 3;
             // 
-            // panel1
+            // imgCircle
             // 
-            this.panel1.BackgroundImage = global::MathematicalFormulas.Properties.Resources.Circle;
-            this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel1.Controls.Add(this.radioButtonRad);
-            this.panel1.Controls.Add(this.radioButtonDia);
-            this.panel1.Controls.Add(this.textDiameter);
-            this.panel1.Controls.Add(this.textRadius);
-            this.panel1.Location = new System.Drawing.Point(8, 23);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(390, 390);
-            this.panel1.TabIndex = 1;
+            this.imgCircle.BackgroundImage = global::MathematicalFormulas.Properties.Resources.Circle;
+            this.imgCircle.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.imgCircle.Controls.Add(this.radioButtonRad);
+            this.imgCircle.Controls.Add(this.radioButtonDia);
+            this.imgCircle.Controls.Add(this.textDiameter);
+            this.imgCircle.Controls.Add(this.textRadius);
+            this.imgCircle.Location = new System.Drawing.Point(8, 23);
+            this.imgCircle.Name = "imgCircle";
+            this.imgCircle.Size = new System.Drawing.Size(390, 390);
+            this.imgCircle.TabIndex = 1;
             // 
             // radioButtonRad
             // 
@@ -160,7 +169,8 @@
             this.radioButtonDia.TabIndex = 8;
             this.radioButtonDia.TabStop = true;
             this.radioButtonDia.UseVisualStyleBackColor = true;
-            this.radioButtonDia.CheckedChanged += new System.EventHandler(this.radioButtonDia_CheckedChanged);            // 
+            this.radioButtonDia.CheckedChanged += new System.EventHandler(this.radioButtonDia_CheckedChanged);
+            // 
             // textDiameter
             // 
             this.textDiameter.Location = new System.Drawing.Point(28, 160);
@@ -181,6 +191,10 @@
             // 
             // tabPageHemis
             // 
+            this.tabPageHemis.Controls.Add(this.textHemiVResult);
+            this.tabPageHemis.Controls.Add(this.textTitleHemiV);
+            this.tabPageHemis.Controls.Add(this.textWarningHemi);
+            this.tabPageHemis.Controls.Add(this.imgHemisphere);
             this.tabPageHemis.Location = new System.Drawing.Point(4, 25);
             this.tabPageHemis.Name = "tabPageHemis";
             this.tabPageHemis.Padding = new System.Windows.Forms.Padding(3);
@@ -188,23 +202,74 @@
             this.tabPageHemis.TabIndex = 1;
             this.tabPageHemis.Text = "Volume of a hemisphere";
             // 
+            // textHemiVResult
+            // 
+            this.textHemiVResult.BackColor = System.Drawing.SystemColors.Control;
+            this.textHemiVResult.Location = new System.Drawing.Point(404, 44);
+            this.textHemiVResult.Name = "textHemiVResult";
+            this.textHemiVResult.ReadOnly = true;
+            this.textHemiVResult.Size = new System.Drawing.Size(170, 22);
+            this.textHemiVResult.TabIndex = 9;
+            // 
+            // textTitleHemiV
+            // 
+            this.textTitleHemiV.BackColor = System.Drawing.SystemColors.Control;
+            this.textTitleHemiV.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textTitleHemiV.Location = new System.Drawing.Point(405, 23);
+            this.textTitleHemiV.Name = "textTitleHemiV";
+            this.textTitleHemiV.Size = new System.Drawing.Size(96, 15);
+            this.textTitleHemiV.TabIndex = 8;
+            this.textTitleHemiV.Text = "Volume:";
+            // 
+            // textWarningHemi
+            // 
+            this.textWarningHemi.BackColor = System.Drawing.SystemColors.Control;
+            this.textWarningHemi.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textWarningHemi.ForeColor = System.Drawing.Color.Red;
+            this.textWarningHemi.Location = new System.Drawing.Point(403, 197);
+            this.textWarningHemi.Multiline = true;
+            this.textWarningHemi.Name = "textWarningHemi";
+            this.textWarningHemi.ReadOnly = true;
+            this.textWarningHemi.ShortcutsEnabled = false;
+            this.textWarningHemi.Size = new System.Drawing.Size(188, 102);
+            this.textWarningHemi.TabIndex = 7;
+            // 
+            // imgHemisphere
+            // 
+            this.imgHemisphere.BackgroundImage = global::MathematicalFormulas.Properties.Resources.hemisphere001;
+            this.imgHemisphere.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.imgHemisphere.Controls.Add(this.textHemiRadius);
+            this.imgHemisphere.Location = new System.Drawing.Point(8, 23);
+            this.imgHemisphere.Name = "imgHemisphere";
+            this.imgHemisphere.Size = new System.Drawing.Size(390, 390);
+            this.imgHemisphere.TabIndex = 2;
+            // 
+            // textHemiRadius
+            // 
+            this.textHemiRadius.Location = new System.Drawing.Point(188, 245);
+            this.textHemiRadius.Name = "textHemiRadius";
+            this.textHemiRadius.Size = new System.Drawing.Size(146, 22);
+            this.textHemiRadius.TabIndex = 0;
+            this.textHemiRadius.TextChanged += new System.EventHandler(this.textHemiRadius_TextChanged);
+            this.textHemiRadius.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textHemiRadius_KeyPress);
+            // 
             // tabPageTri
             // 
+            this.tabPageTri.BackColor = System.Drawing.SystemColors.Control;
             this.tabPageTri.Location = new System.Drawing.Point(4, 25);
             this.tabPageTri.Name = "tabPageTri";
             this.tabPageTri.Size = new System.Drawing.Size(594, 424);
             this.tabPageTri.TabIndex = 2;
             this.tabPageTri.Text = "Area of triangle";
-            this.tabPageTri.UseVisualStyleBackColor = true;
             // 
             // tabPageQuad
             // 
+            this.tabPageQuad.BackColor = System.Drawing.SystemColors.Control;
             this.tabPageQuad.Location = new System.Drawing.Point(4, 25);
             this.tabPageQuad.Name = "tabPageQuad";
             this.tabPageQuad.Size = new System.Drawing.Size(594, 424);
             this.tabPageQuad.TabIndex = 3;
             this.tabPageQuad.Text = "Quadratic equation";
-            this.tabPageQuad.UseVisualStyleBackColor = true;
             // 
             // MainForm
             // 
@@ -218,8 +283,12 @@
             this.tab_Formulas.ResumeLayout(false);
             this.tabPageCircle.ResumeLayout(false);
             this.tabPageCircle.PerformLayout();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            this.imgCircle.ResumeLayout(false);
+            this.imgCircle.PerformLayout();
+            this.tabPageHemis.ResumeLayout(false);
+            this.tabPageHemis.PerformLayout();
+            this.imgHemisphere.ResumeLayout(false);
+            this.imgHemisphere.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -232,15 +301,20 @@
         private System.Windows.Forms.TabPage tabPageTri;
         private System.Windows.Forms.TabPage tabPageQuad;
         private System.Windows.Forms.TextBox textWarningCir;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel imgCircle;
         private System.Windows.Forms.TextBox textDiameter;
         private System.Windows.Forms.TextBox textRadius;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textTitleCir;
+        private System.Windows.Forms.TextBox textTitleCirA;
+        private System.Windows.Forms.TextBox textTitleCirC;
         private System.Windows.Forms.TextBox textCirAResult;
         private System.Windows.Forms.TextBox textCirCResult;
         private System.Windows.Forms.RadioButton radioButtonRad;
         private System.Windows.Forms.RadioButton radioButtonDia;
+        private System.Windows.Forms.Panel imgHemisphere;
+        private System.Windows.Forms.TextBox textHemiRadius;
+        private System.Windows.Forms.TextBox textHemiVResult;
+        private System.Windows.Forms.TextBox textTitleHemiV;
+        private System.Windows.Forms.TextBox textWarningHemi;
     }
 }
 

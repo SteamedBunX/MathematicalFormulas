@@ -18,6 +18,10 @@ namespace MathFunctions
             return cirRad * 2 * Math.PI;
         }
 
+        public static double GetHemiVol(double hemiRad)
+        {
+            return 2.0 / 3 * Math.PI * Math.Pow(hemiRad, 3);
+        }
 
     }
 }
