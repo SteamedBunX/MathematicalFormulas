@@ -252,6 +252,12 @@ namespace MathematicalFormulas
                 e.Handled = true;
             }
 
+            if ((e.KeyChar == '-') && (sender as TextBox).Text.Length > 0)
+            {
+                textWarningQuad.Text = "- can only be put in the front";
+                e.Handled = true;
+            }
+
             // above code are copied and modified from stackoverflow post
             // https://stackoverflow.com/questions/463299/how-do-i-make-a-textbox-that-only-accepts-numbers
 
@@ -265,6 +271,9 @@ namespace MathematicalFormulas
                         e.Handled = true;
                     }
                 }
+                // Only allowing negative to be put in the front.
+
+
                 else
                 {
                     textWarningQuad.Text = "You can only enter up to 4 digit number.";
