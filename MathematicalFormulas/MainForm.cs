@@ -255,13 +255,6 @@ namespace MathematicalFormulas
             // above code are copied and modified from stackoverflow post
             // https://stackoverflow.com/questions/463299/how-do-i-make-a-textbox-that-only-accepts-numbers
 
-            // Not allowing negative
-            if ((e.KeyChar == '-') && (sender as TextBox).Text.Length > 0)
-            {
-                textWarningQuad.Text = "- can only be put in the front";
-                e.Handled = true;
-            }
-
             if (!char.IsControl(e.KeyChar) && (sender as TextBox).Text.Length > 3)
             {
                 if ((sender as TextBox).Text.IndexOf('.') > -1)
