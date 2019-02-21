@@ -227,10 +227,11 @@ namespace MathematicalFormulas
             }
             else
             {
-                quadX1 = GetQuadX1(quadA, quadB, quadC);
-                quadX2 = GetQuadX2(quadA, quadB, quadC);
-                textBoxX1.Text = GetQuadX1(quadA, quadB, quadC).ToString();
-                textBoxX2.Text = GetQuadX2(quadA, quadB, quadC).ToString();
+                Tuple<decimal, decimal> xs= GetQuadX(quadA, quadB, quadC);
+                quadX1 = xs.Item1;
+                quadX2 = xs.Item2;
+                textBoxX1.Text = quadX1.ToString();
+                textBoxX2.Text = quadX2.ToString();
             }
         }
 

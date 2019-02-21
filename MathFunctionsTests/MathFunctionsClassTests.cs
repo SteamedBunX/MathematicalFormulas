@@ -19,26 +19,28 @@ namespace MathFunctions.Tests
         }
 
         [TestMethod()]
-        public void GetQuadX1Test()
+        public void GetQuadXTest()
         {
 
-            decimal x = MathFunctionsClass.GetQuadX1(2, 5, 0);
-            Assert.AreEqual(0m, x);
+            Tuple<decimal, decimal> xs = MathFunctionsClass.GetQuadX(2, 5, 0);
+            Assert.AreEqual(new Tuple<decimal, decimal>(0m, -2.5m), xs);
 
         }
 
         [TestMethod()]
-        public void GetQuadX2Test()
-        {
-            decimal x2 = MathFunctionsClass.GetQuadX2(2, 5, 0);
-            Assert.AreEqual(-2.5m, x2);
-        }
-
-        [TestMethod()]
-        public void GetCirAreaTest()
+        public void GetCirTest()
         {
             double a = MathFunctionsClass.GetCirArea(2);
-            Assert.Fail();
+            double c = MathFunctionsClass.GetCirCirc(2);
+            Assert.AreEqual(12.57, a, 0.01);
+            Assert.AreEqual(12.57, c, 0.01);
+        }
+
+        [TestMethod()]
+        public void GetTriAreaTest()
+        {
+            double a = MathFunctionsClass.GetTriArea(24,30,18);
+            Assert.AreEqual(216.0, a, 0.01);
         }
     }
 }

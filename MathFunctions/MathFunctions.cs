@@ -29,18 +29,12 @@ namespace MathFunctions
             return Math.Sqrt(p * (p - a) * (p - b) * (p - c));
         }
 
-        public static decimal GetQuadX1(decimal a, decimal b, decimal c)
+        public static Tuple<decimal, decimal> GetQuadX(decimal a, decimal b, decimal c)
         {
             decimal root = (decimal)Math.Sqrt((double)((b * b) - (4m * a * c) ));
-            decimal top = b * -1 + root;
-            return (top / (2 * a));
-        }
-
-        public static decimal GetQuadX2(decimal a, decimal b, decimal c)
-        {
-            decimal root = (decimal)Math.Sqrt((double)(b * b - 4 * a * c));
-            decimal top = b * -1 + root * -1;
-            return (top / (2 * a));
+            decimal top1 = b * -1 + root;
+            decimal top2 = b * -1 + root * -1;
+            return Tuple.Create(top1 / (2 * a), top2 / (2 * a));
         }
 
     }
