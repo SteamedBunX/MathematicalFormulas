@@ -82,6 +82,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="img\Circle.png" />
+    <None Include="Resources\无标题.png" />
+    <None Include="Resources\main-qimg-7906ce871f722c4bd826483c828c2343.png" />
     <None Include="Resources\hemisphere001.gif" />
   </ItemGroup>
   <ItemGroup>

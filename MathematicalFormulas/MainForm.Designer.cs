@@ -47,12 +47,31 @@
             this.imgHemisphere = new System.Windows.Forms.Panel();
             this.textHemiRadius = new System.Windows.Forms.TextBox();
             this.tabPageTri = new System.Windows.Forms.TabPage();
+            this.textWarningTri = new System.Windows.Forms.TextBox();
+            this.textTitleArea = new System.Windows.Forms.TextBox();
+            this.textTriAResult = new System.Windows.Forms.TextBox();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.textTriB = new System.Windows.Forms.TextBox();
+            this.textTriC = new System.Windows.Forms.TextBox();
+            this.textTriA = new System.Windows.Forms.TextBox();
             this.tabPageQuad = new System.Windows.Forms.TabPage();
+            this.textWarningQuad = new System.Windows.Forms.TextBox();
+            this.imgQuad = new System.Windows.Forms.Panel();
+            this.textQuadC = new System.Windows.Forms.TextBox();
+            this.textQuadB = new System.Windows.Forms.TextBox();
+            this.textQuadA = new System.Windows.Forms.TextBox();
+            this.textTitleX = new System.Windows.Forms.TextBox();
+            this.textBoxX1 = new System.Windows.Forms.TextBox();
+            this.textBoxX2 = new System.Windows.Forms.TextBox();
             this.tab_Formulas.SuspendLayout();
             this.tabPageCircle.SuspendLayout();
             this.imgCircle.SuspendLayout();
             this.tabPageHemis.SuspendLayout();
             this.imgHemisphere.SuspendLayout();
+            this.tabPageTri.SuspendLayout();
+            this.panel1.SuspendLayout();
+            this.tabPageQuad.SuspendLayout();
+            this.imgQuad.SuspendLayout();
             this.SuspendLayout();
             // 
             // tab_Formulas
@@ -256,20 +275,188 @@
             // tabPageTri
             // 
             this.tabPageTri.BackColor = System.Drawing.SystemColors.Control;
+            this.tabPageTri.Controls.Add(this.textWarningTri);
+            this.tabPageTri.Controls.Add(this.textTitleArea);
+            this.tabPageTri.Controls.Add(this.textTriAResult);
+            this.tabPageTri.Controls.Add(this.panel1);
             this.tabPageTri.Location = new System.Drawing.Point(4, 25);
             this.tabPageTri.Name = "tabPageTri";
             this.tabPageTri.Size = new System.Drawing.Size(594, 424);
             this.tabPageTri.TabIndex = 2;
             this.tabPageTri.Text = "Area of triangle";
             // 
+            // textWarningTri
+            // 
+            this.textWarningTri.BackColor = System.Drawing.SystemColors.Control;
+            this.textWarningTri.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textWarningTri.ForeColor = System.Drawing.Color.Red;
+            this.textWarningTri.Location = new System.Drawing.Point(403, 197);
+            this.textWarningTri.Multiline = true;
+            this.textWarningTri.Name = "textWarningTri";
+            this.textWarningTri.ReadOnly = true;
+            this.textWarningTri.ShortcutsEnabled = false;
+            this.textWarningTri.Size = new System.Drawing.Size(188, 102);
+            this.textWarningTri.TabIndex = 12;
+            // 
+            // textTitleArea
+            // 
+            this.textTitleArea.BackColor = System.Drawing.SystemColors.Control;
+            this.textTitleArea.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textTitleArea.Location = new System.Drawing.Point(405, 23);
+            this.textTitleArea.Name = "textTitleArea";
+            this.textTitleArea.Size = new System.Drawing.Size(96, 15);
+            this.textTitleArea.TabIndex = 11;
+            this.textTitleArea.Text = "Area:";
+            // 
+            // textTriAResult
+            // 
+            this.textTriAResult.BackColor = System.Drawing.SystemColors.Control;
+            this.textTriAResult.Location = new System.Drawing.Point(404, 44);
+            this.textTriAResult.Name = "textTriAResult";
+            this.textTriAResult.ReadOnly = true;
+            this.textTriAResult.Size = new System.Drawing.Size(170, 22);
+            this.textTriAResult.TabIndex = 10;
+            this.textTriAResult.Text = "0";
+            // 
+            // panel1
+            // 
+            this.panel1.BackgroundImage = global::MathematicalFormulas.Properties.Resources.main_qimg_7906ce871f722c4bd826483c828c2343;
+            this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.panel1.Controls.Add(this.textTriB);
+            this.panel1.Controls.Add(this.textTriC);
+            this.panel1.Controls.Add(this.textTriA);
+            this.panel1.Location = new System.Drawing.Point(8, 23);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(390, 390);
+            this.panel1.TabIndex = 3;
+            // 
+            // textTriB
+            // 
+            this.textTriB.Location = new System.Drawing.Point(19, 128);
+            this.textTriB.Name = "textTriB";
+            this.textTriB.Size = new System.Drawing.Size(146, 22);
+            this.textTriB.TabIndex = 2;
+            this.textTriB.TextChanged += new System.EventHandler(this.textTriangleInput_TextChanged);
+            this.textTriB.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textTriLength_KeyPress);
+            // 
+            // textTriC
+            // 
+            this.textTriC.Location = new System.Drawing.Point(241, 187);
+            this.textTriC.Name = "textTriC";
+            this.textTriC.Size = new System.Drawing.Size(146, 22);
+            this.textTriC.TabIndex = 1;
+            this.textTriC.TextChanged += new System.EventHandler(this.textTriangleInput_TextChanged);
+            this.textTriC.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textTriLength_KeyPress);
+            // 
+            // textTriA
+            // 
+            this.textTriA.Location = new System.Drawing.Point(120, 279);
+            this.textTriA.Name = "textTriA";
+            this.textTriA.Size = new System.Drawing.Size(146, 22);
+            this.textTriA.TabIndex = 0;
+            this.textTriA.TextChanged += new System.EventHandler(this.textTriangleInput_TextChanged);
+            this.textTriA.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textTriLength_KeyPress);
+            // 
             // tabPageQuad
             // 
             this.tabPageQuad.BackColor = System.Drawing.SystemColors.Control;
+            this.tabPageQuad.Controls.Add(this.textBoxX2);
+            this.tabPageQuad.Controls.Add(this.textBoxX1);
+            this.tabPageQuad.Controls.Add(this.textTitleX);
+            this.tabPageQuad.Controls.Add(this.textWarningQuad);
+            this.tabPageQuad.Controls.Add(this.imgQuad);
             this.tabPageQuad.Location = new System.Drawing.Point(4, 25);
             this.tabPageQuad.Name = "tabPageQuad";
             this.tabPageQuad.Size = new System.Drawing.Size(594, 424);
             this.tabPageQuad.TabIndex = 3;
             this.tabPageQuad.Text = "Quadratic equation";
+            // 
+            // textWarningQuad
+            // 
+            this.textWarningQuad.BackColor = System.Drawing.SystemColors.Control;
+            this.textWarningQuad.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textWarningQuad.ForeColor = System.Drawing.Color.Red;
+            this.textWarningQuad.Location = new System.Drawing.Point(9, 110);
+            this.textWarningQuad.Multiline = true;
+            this.textWarningQuad.Name = "textWarningQuad";
+            this.textWarningQuad.ReadOnly = true;
+            this.textWarningQuad.ShortcutsEnabled = false;
+            this.textWarningQuad.Size = new System.Drawing.Size(577, 31);
+            this.textWarningQuad.TabIndex = 13;
+            // 
+            // imgQuad
+            // 
+            this.imgQuad.BackgroundImage = global::MathematicalFormulas.Properties.Resources.无标题;
+            this.imgQuad.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.imgQuad.Controls.Add(this.textQuadC);
+            this.imgQuad.Controls.Add(this.textQuadB);
+            this.imgQuad.Controls.Add(this.textQuadA);
+            this.imgQuad.Location = new System.Drawing.Point(9, 4);
+            this.imgQuad.Name = "imgQuad";
+            this.imgQuad.Size = new System.Drawing.Size(577, 100);
+            this.imgQuad.TabIndex = 0;
+            // 
+            // textQuadC
+            // 
+            this.textQuadC.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textQuadC.Location = new System.Drawing.Point(389, 38);
+            this.textQuadC.Name = "textQuadC";
+            this.textQuadC.Size = new System.Drawing.Size(113, 30);
+            this.textQuadC.TabIndex = 2;
+            this.textQuadC.TextChanged += new System.EventHandler(this.textQuadInput_TextChanged);
+            this.textQuadC.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textQuad_KeyPress);
+            // 
+            // textQuadB
+            // 
+            this.textQuadB.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textQuadB.Location = new System.Drawing.Point(218, 38);
+            this.textQuadB.Name = "textQuadB";
+            this.textQuadB.Size = new System.Drawing.Size(113, 30);
+            this.textQuadB.TabIndex = 1;
+            this.textQuadB.TextChanged += new System.EventHandler(this.textQuadInput_TextChanged);
+            this.textQuadB.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textQuad_KeyPress);
+            // 
+            // textQuadA
+            // 
+            this.textQuadA.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textQuadA.Location = new System.Drawing.Point(40, 38);
+            this.textQuadA.Name = "textQuadA";
+            this.textQuadA.Size = new System.Drawing.Size(113, 30);
+            this.textQuadA.TabIndex = 0;
+            this.textQuadA.TextChanged += new System.EventHandler(this.textQuadInput_TextChanged);
+            this.textQuadA.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textQuad_KeyPress);
+            // 
+            // textTitleX
+            // 
+            this.textTitleX.BackColor = System.Drawing.SystemColors.Control;
+            this.textTitleX.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textTitleX.Font = new System.Drawing.Font("Microsoft Sans Serif", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textTitleX.Location = new System.Drawing.Point(31, 233);
+            this.textTitleX.Name = "textTitleX";
+            this.textTitleX.ReadOnly = true;
+            this.textTitleX.Size = new System.Drawing.Size(143, 91);
+            this.textTitleX.TabIndex = 14;
+            this.textTitleX.Text = "X=";
+            // 
+            // textBoxX1
+            // 
+            this.textBoxX1.BackColor = System.Drawing.SystemColors.Control;
+            this.textBoxX1.Font = new System.Drawing.Font("Microsoft Sans Serif", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxX1.Location = new System.Drawing.Point(197, 158);
+            this.textBoxX1.Name = "textBoxX1";
+            this.textBoxX1.ReadOnly = true;
+            this.textBoxX1.Size = new System.Drawing.Size(370, 98);
+            this.textBoxX1.TabIndex = 15;
+            // 
+            // textBoxX2
+            // 
+            this.textBoxX2.BackColor = System.Drawing.SystemColors.Control;
+            this.textBoxX2.Font = new System.Drawing.Font("Microsoft Sans Serif", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxX2.Location = new System.Drawing.Point(197, 294);
+            this.textBoxX2.Name = "textBoxX2";
+            this.textBoxX2.ReadOnly = true;
+            this.textBoxX2.Size = new System.Drawing.Size(370, 98);
+            this.textBoxX2.TabIndex = 16;
             // 
             // MainForm
             // 
@@ -289,6 +476,14 @@
             this.tabPageHemis.PerformLayout();
             this.imgHemisphere.ResumeLayout(false);
             this.imgHemisphere.PerformLayout();
+            this.tabPageTri.ResumeLayout(false);
+            this.tabPageTri.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            this.tabPageQuad.ResumeLayout(false);
+            this.tabPageQuad.PerformLayout();
+            this.imgQuad.ResumeLayout(false);
+            this.imgQuad.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -315,6 +510,21 @@
         private System.Windows.Forms.TextBox textHemiVResult;
         private System.Windows.Forms.TextBox textTitleHemiV;
         private System.Windows.Forms.TextBox textWarningHemi;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.TextBox textTriA;
+        private System.Windows.Forms.TextBox textTriB;
+        private System.Windows.Forms.TextBox textTriC;
+        private System.Windows.Forms.TextBox textTitleArea;
+        private System.Windows.Forms.TextBox textTriAResult;
+        private System.Windows.Forms.TextBox textWarningTri;
+        private System.Windows.Forms.Panel imgQuad;
+        private System.Windows.Forms.TextBox textQuadC;
+        private System.Windows.Forms.TextBox textQuadB;
+        private System.Windows.Forms.TextBox textQuadA;
+        private System.Windows.Forms.TextBox textWarningQuad;
+        private System.Windows.Forms.TextBox textBoxX2;
+        private System.Windows.Forms.TextBox textBoxX1;
+        private System.Windows.Forms.TextBox textTitleX;
     }
 }
 

@@ -79,5 +79,25 @@ namespace MathematicalFormulas.Properties {
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap main_qimg_7906ce871f722c4bd826483c828c2343 {
+            get {
+                object obj = ResourceManager.GetObject("main-qimg-7906ce871f722c4bd826483c828c2343", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap 无标题 {
+            get {
+                object obj = ResourceManager.GetObject("无标题", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }

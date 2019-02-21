@@ -19,6 +19,9 @@ namespace MathematicalFormulas
         double cirCirc = 0.0;
         double hemiRadius = 0.0;
         double hemiVolume = 0.0;
+        double a = 0.0, b = 0.0, c = 0.0;
+        decimal quadA = 0.0m, quadB = 0.0m, quadC = 0.0m;
+        decimal quadX1 = 0.0m, quadX2 = 0.0m;
 
         public MainForm()
         {
@@ -150,94 +153,6 @@ namespace MathematicalFormulas
             }
         }
 
-        private void textDiameter_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            textWarningCir.ResetText();
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.') && (e.KeyChar != '-'))
-            {
-                textWarningCir.Text = "You can only enter numbers here.";
-                e.Handled = true;
-            }
-
-            // only allow one decimal point
-            if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
-            {
-                textWarningCir.Text = "You can only enter one decimal point.";
-                e.Handled = true;
-            }
-
-            // above code are copied and modified from stackoverflow post
-            // https://stackoverflow.com/questions/463299/how-do-i-make-a-textbox-that-only-accepts-numbers
-
-            // only allow - at the beginning
-            if ((e.KeyChar == '-'))
-            {
-                textWarningCir.Text = "Length can only be positive numbers.";
-                e.Handled = true;
-            }
-
-            if (!char.IsControl(e.KeyChar) && (sender as TextBox).Text.Length > 5)
-            {
-                if ((sender as TextBox).Text.IndexOf('.') > -1)
-                {
-                    if ((sender as TextBox).Text.Length > 6)
-                    {
-                        textWarningCir.Text = "You can only enter up to 6 digit number.";
-                        e.Handled = true;
-                    }
-                }
-                else
-                {
-                    textWarningCir.Text = "You can only enter up to 6 digit number.";
-                    e.Handled = true;
-                }
-            }
-        }
-
-        private void textRadius_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            textWarningCir.ResetText();
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.') && (e.KeyChar != '-'))
-            {
-                textWarningCir.Text = "You can only enter numbers here.";
-                e.Handled = true;
-            }
-
-            // only allow one decimal point
-            if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
-            {
-                textWarningCir.Text = "You can only enter one decimal point.";
-                e.Handled = true;
-            }
-
-            // above code are copied and modified from stackoverflow post
-            // https://stackoverflow.com/questions/463299/how-do-i-make-a-textbox-that-only-accepts-numbers
-
-            // only allow - at the beginning
-            if ((e.KeyChar == '-'))
-            {
-                textWarningCir.Text = "Length can only be positive numbers.";
-                e.Handled = true;
-            }
-
-            if (!char.IsControl(e.KeyChar) && (sender as TextBox).Text.Length > 5)
-            {
-                if ((sender as TextBox).Text.IndexOf('.') > -1)
-                {
-                    if ((sender as TextBox).Text.Length > 6)
-                    {
-                        textWarningCir.Text = "You can only enter up to 6 digit number.";
-                        e.Handled = true;
-                    }
-                }
-                else
-                {
-                    textWarningCir.Text = "You can only enter up to 6 digit number.";
-                    e.Handled = true;
-                }
-            }
-        }
-
         // Hemisphere 
         // Radius Text changed
         private void textHemiRadius_TextChanged(object sender, EventArgs e)
@@ -255,33 +170,156 @@ namespace MathematicalFormulas
             else
             {
                 textHemiVResult.Text = "0";
-                textWarningHemi.Text = "Failed to parse the diameter.";
+                textWarningHemi.Text = "Failed to parse the length.";
             }
         }
 
-        private void textHemiRadius_KeyPress(object sender, KeyPressEventArgs e)
+        // Triangle
+        // Any of the 3 text changed
+        private void textTriangleInput_TextChanged(object sender, EventArgs e)
         {
-            textWarningHemi.ResetText();
+            if(double.TryParse(textTriA.Text, out a) && double.TryParse(textTriB.Text, out b) && double.TryParse(textTriC.Text, out c))
+            {
+                if(a == 0 || b == 0 || c == 0)
+                {
+                    textWarningTri.Text = "Length cannot be 0.";
+                }
+                else if(a>b+c && b>a+c && c>a+b)
+                {
+                    textWarningTri.Text = "One side cannot be longer than the other two sides combined.";
+                }
+                else
+                {
+                    textTriAResult.Text = $"{GetTriArea(a,b,c):f3}";
+                }
+
+            }
+            else
+            {
+                textWarningTri.Text = "Failed to parse the Lengths.";
+            }
+        }
+
+        // Quadratic equation
+        private void textQuadInput_TextChanged(object sender, EventArgs e)
+        {
+            textWarningQuad.ResetText();
+
+            if (textQuadA.Text.Length == 0 ||
+                textQuadB.Text.Length == 0 ||
+                textQuadC.Text.Length == 0)
+            {
+                textWarningQuad.Text = "Please fill out all the numbers.";
+            }
+            else if (!decimal.TryParse(textQuadA.Text, out quadA) || 
+                !decimal.TryParse(textQuadB.Text, out quadB) || 
+                !decimal.TryParse(textQuadC.Text, out quadC) )
+            {
+                textWarningQuad.Text = "Failed to parse the numbers.";
+            }
+            else if(quadA.Equals(0.0))
+            {
+                textWarningQuad.Text = "a cannot be 0.";
+            }
+            else if((quadB*quadB)-(4 * quadA * quadC) < 0)
+            {
+                textWarningQuad.Text = "b^2 - 4ac cannot be less than 0.";
+            }
+            else
+            {
+                quadX1 = GetQuadX1(quadA, quadB, quadC);
+                quadX2 = GetQuadX2(quadA, quadB, quadC);
+                textBoxX1.Text = GetQuadX1(quadA, quadB, quadC).ToString();
+                textBoxX2.Text = GetQuadX2(quadA, quadB, quadC).ToString();
+            }
+        }
+
+        // Quadratic Equation specific keypress, limiting imput to 4 digits.
+        public void textQuad_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            textWarningQuad.ResetText();
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.') && (e.KeyChar != '-'))
             {
-                textWarningHemi.Text = "You can only enter numbers here.";
+                textWarningQuad.Text = "You can only enter numbers here.";
                 e.Handled = true;
             }
 
             // only allow one decimal point
             if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
             {
-                textWarningHemi.Text = "You can only enter one decimal point.";
+                textWarningQuad.Text = "You can only enter one decimal point.";
                 e.Handled = true;
             }
 
             // above code are copied and modified from stackoverflow post
             // https://stackoverflow.com/questions/463299/how-do-i-make-a-textbox-that-only-accepts-numbers
 
-            // only allow - at the beginning
+            // Not allowing negative
+            if ((e.KeyChar == '-') && (sender as TextBox).Text.Length > 0)
+            {
+                textWarningQuad.Text = "- can only be put in the front";
+                e.Handled = true;
+            }
+
+            if (!char.IsControl(e.KeyChar) && (sender as TextBox).Text.Length > 3)
+            {
+                if ((sender as TextBox).Text.IndexOf('.') > -1)
+                {
+                    if ((sender as TextBox).Text.Length > 4)
+                    {
+                        textWarningQuad.Text = "You can only enter up to 4 digit number.";
+                        e.Handled = true;
+                    }
+                }
+                else
+                {
+                    textWarningQuad.Text = "You can only enter up to 4 digit number.";
+                    e.Handled = true;
+                }
+            }
+        }
+
+        //Key Press Events
+        private void textDiameter_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            text_KeyPress(sender, e, textWarningCir);
+        }
+        private void textRadius_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            text_KeyPress(sender, e, textWarningCir);
+        }
+        private void textHemiRadius_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            text_KeyPress(sender, e, textWarningHemi);
+        }
+        private void textTriLength_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            text_KeyPress(sender, e, textWarningTri);
+        }
+
+        public void text_KeyPress(object sender, KeyPressEventArgs e, TextBox textWarning)
+        {
+            textWarning.ResetText();
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.') && (e.KeyChar != '-'))
+            {
+                textWarning.Text = "You can only enter numbers here.";
+                e.Handled = true;
+            }
+
+            // only allow one decimal point
+            if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
+            {
+                textWarning.Text = "You can only enter one decimal point.";
+                e.Handled = true;
+            }
+
+            // above code are copied and modified from stackoverflow post
+            // https://stackoverflow.com/questions/463299/how-do-i-make-a-textbox-that-only-accepts-numbers
+
+            // Not allowing negative
             if ((e.KeyChar == '-'))
             {
-                textWarningHemi.Text = "Length can only be positive numbers.";
+                textWarning.Text = "Length can only be positive numbers.";
                 e.Handled = true;
             }
 
@@ -291,13 +329,13 @@ namespace MathematicalFormulas
                 {
                     if ((sender as TextBox).Text.Length > 6)
                     {
-                        textWarningHemi.Text = "You can only enter up to 6 digit number.";
+                        textWarning.Text = "You can only enter up to 6 digit number.";
                         e.Handled = true;
                     }
                 }
                 else
                 {
-                    textWarningHemi.Text = "You can only enter up to 6 digit number.";
+                    textWarning.Text = "You can only enter up to 6 digit number.";
                     e.Handled = true;
                 }
             }

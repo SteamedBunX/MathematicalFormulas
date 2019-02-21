@@ -16,5 +16,21 @@ namespace MathFunctions.Tests
         {
             //Assert.equals();
         }
+
+        [TestMethod()]
+        public void GetQuadX1Test()
+        {
+
+            decimal x = MathFunctionsClass.GetQuadX1(2, 5, 0);
+            Assert.AreEqual(0m, x);
+
+        }
+
+        [TestMethod()]
+        public void GetQuadX2Test()
+        {
+            decimal x2 = MathFunctionsClass.GetQuadX2(2, 5, 0);
+            Assert.AreEqual(-2.5m, x2);
+        }
     }
 }
