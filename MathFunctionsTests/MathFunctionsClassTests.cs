@@ -14,7 +14,8 @@ namespace MathFunctions.Tests
         [TestMethod()]
         public void GetHemiValTest()
         {
-            //Assert.equals();
+            double a = MathFunctionsClass.GetHemiVol(5);
+            Assert.AreEqual(261.799, a, 0.001);
         }
 
         [TestMethod()]
@@ -31,6 +32,13 @@ namespace MathFunctions.Tests
         {
             decimal x2 = MathFunctionsClass.GetQuadX2(2, 5, 0);
             Assert.AreEqual(-2.5m, x2);
+        }
+
+        [TestMethod()]
+        public void GetCirAreaTest()
+        {
+            double a = MathFunctionsClass.GetCirArea(2);
+            Assert.Fail();
         }
     }
 }

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.tab_Formulas = new System.Windows.Forms.TabControl();
             this.tabPageCircle = new System.Windows.Forms.TabPage();
             this.textCirAResult = new System.Windows.Forms.TextBox();
@@ -35,42 +36,42 @@
             this.textTitleCirA = new System.Windows.Forms.TextBox();
             this.textTitleCirC = new System.Windows.Forms.TextBox();
             this.textWarningCir = new System.Windows.Forms.TextBox();
+            this.tabPageHemis = new System.Windows.Forms.TabPage();
+            this.textHemiVResult = new System.Windows.Forms.TextBox();
+            this.textTitleHemiV = new System.Windows.Forms.TextBox();
+            this.textWarningHemi = new System.Windows.Forms.TextBox();
+            this.tabPageTri = new System.Windows.Forms.TabPage();
+            this.textWarningTri = new System.Windows.Forms.TextBox();
+            this.textTitleArea = new System.Windows.Forms.TextBox();
+            this.textTriAResult = new System.Windows.Forms.TextBox();
+            this.tabPageQuad = new System.Windows.Forms.TabPage();
+            this.textBoxX2 = new System.Windows.Forms.TextBox();
+            this.textBoxX1 = new System.Windows.Forms.TextBox();
+            this.textTitleX = new System.Windows.Forms.TextBox();
+            this.textWarningQuad = new System.Windows.Forms.TextBox();
             this.imgCircle = new System.Windows.Forms.Panel();
             this.radioButtonRad = new System.Windows.Forms.RadioButton();
             this.radioButtonDia = new System.Windows.Forms.RadioButton();
             this.textDiameter = new System.Windows.Forms.TextBox();
             this.textRadius = new System.Windows.Forms.TextBox();
-            this.tabPageHemis = new System.Windows.Forms.TabPage();
-            this.textHemiVResult = new System.Windows.Forms.TextBox();
-            this.textTitleHemiV = new System.Windows.Forms.TextBox();
-            this.textWarningHemi = new System.Windows.Forms.TextBox();
             this.imgHemisphere = new System.Windows.Forms.Panel();
             this.textHemiRadius = new System.Windows.Forms.TextBox();
-            this.tabPageTri = new System.Windows.Forms.TabPage();
-            this.textWarningTri = new System.Windows.Forms.TextBox();
-            this.textTitleArea = new System.Windows.Forms.TextBox();
-            this.textTriAResult = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.textTriB = new System.Windows.Forms.TextBox();
             this.textTriC = new System.Windows.Forms.TextBox();
             this.textTriA = new System.Windows.Forms.TextBox();
-            this.tabPageQuad = new System.Windows.Forms.TabPage();
-            this.textWarningQuad = new System.Windows.Forms.TextBox();
             this.imgQuad = new System.Windows.Forms.Panel();
             this.textQuadC = new System.Windows.Forms.TextBox();
             this.textQuadB = new System.Windows.Forms.TextBox();
             this.textQuadA = new System.Windows.Forms.TextBox();
-            this.textTitleX = new System.Windows.Forms.TextBox();
-            this.textBoxX1 = new System.Windows.Forms.TextBox();
-            this.textBoxX2 = new System.Windows.Forms.TextBox();
             this.tab_Formulas.SuspendLayout();
             this.tabPageCircle.SuspendLayout();
-            this.imgCircle.SuspendLayout();
             this.tabPageHemis.SuspendLayout();
-            this.imgHemisphere.SuspendLayout();
             this.tabPageTri.SuspendLayout();
-            this.panel1.SuspendLayout();
             this.tabPageQuad.SuspendLayout();
+            this.imgCircle.SuspendLayout();
+            this.imgHemisphere.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.imgQuad.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -154,9 +155,160 @@
             this.textWarningCir.Size = new System.Drawing.Size(188, 102);
             this.textWarningCir.TabIndex = 3;
             // 
+            // tabPageHemis
+            // 
+            this.tabPageHemis.Controls.Add(this.textHemiVResult);
+            this.tabPageHemis.Controls.Add(this.textTitleHemiV);
+            this.tabPageHemis.Controls.Add(this.textWarningHemi);
+            this.tabPageHemis.Controls.Add(this.imgHemisphere);
+            this.tabPageHemis.Location = new System.Drawing.Point(4, 25);
+            this.tabPageHemis.Name = "tabPageHemis";
+            this.tabPageHemis.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPageHemis.Size = new System.Drawing.Size(594, 424);
+            this.tabPageHemis.TabIndex = 1;
+            this.tabPageHemis.Text = "Volume of a hemisphere";
+            // 
+            // textHemiVResult
+            // 
+            this.textHemiVResult.BackColor = System.Drawing.SystemColors.Control;
+            this.textHemiVResult.Location = new System.Drawing.Point(404, 44);
+            this.textHemiVResult.Name = "textHemiVResult";
+            this.textHemiVResult.ReadOnly = true;
+            this.textHemiVResult.Size = new System.Drawing.Size(170, 22);
+            this.textHemiVResult.TabIndex = 9;
+            this.textHemiVResult.Text = "0";
+            // 
+            // textTitleHemiV
+            // 
+            this.textTitleHemiV.BackColor = System.Drawing.SystemColors.Control;
+            this.textTitleHemiV.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textTitleHemiV.Location = new System.Drawing.Point(405, 23);
+            this.textTitleHemiV.Name = "textTitleHemiV";
+            this.textTitleHemiV.Size = new System.Drawing.Size(96, 15);
+            this.textTitleHemiV.TabIndex = 8;
+            this.textTitleHemiV.Text = "Volume:";
+            // 
+            // textWarningHemi
+            // 
+            this.textWarningHemi.BackColor = System.Drawing.SystemColors.Control;
+            this.textWarningHemi.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textWarningHemi.ForeColor = System.Drawing.Color.Red;
+            this.textWarningHemi.Location = new System.Drawing.Point(403, 197);
+            this.textWarningHemi.Multiline = true;
+            this.textWarningHemi.Name = "textWarningHemi";
+            this.textWarningHemi.ReadOnly = true;
+            this.textWarningHemi.ShortcutsEnabled = false;
+            this.textWarningHemi.Size = new System.Drawing.Size(188, 102);
+            this.textWarningHemi.TabIndex = 7;
+            // 
+            // tabPageTri
+            // 
+            this.tabPageTri.BackColor = System.Drawing.SystemColors.Control;
+            this.tabPageTri.Controls.Add(this.textWarningTri);
+            this.tabPageTri.Controls.Add(this.textTitleArea);
+            this.tabPageTri.Controls.Add(this.textTriAResult);
+            this.tabPageTri.Controls.Add(this.panel1);
+            this.tabPageTri.Location = new System.Drawing.Point(4, 25);
+            this.tabPageTri.Name = "tabPageTri";
+            this.tabPageTri.Size = new System.Drawing.Size(594, 424);
+            this.tabPageTri.TabIndex = 2;
+            this.tabPageTri.Text = "Area of triangle";
+            // 
+            // textWarningTri
+            // 
+            this.textWarningTri.BackColor = System.Drawing.SystemColors.Control;
+            this.textWarningTri.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textWarningTri.ForeColor = System.Drawing.Color.Red;
+            this.textWarningTri.Location = new System.Drawing.Point(403, 197);
+            this.textWarningTri.Multiline = true;
+            this.textWarningTri.Name = "textWarningTri";
+            this.textWarningTri.ReadOnly = true;
+            this.textWarningTri.ShortcutsEnabled = false;
+            this.textWarningTri.Size = new System.Drawing.Size(188, 102);
+            this.textWarningTri.TabIndex = 12;
+            // 
+            // textTitleArea
+            // 
+            this.textTitleArea.BackColor = System.Drawing.SystemColors.Control;
+            this.textTitleArea.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textTitleArea.Location = new System.Drawing.Point(405, 23);
+            this.textTitleArea.Name = "textTitleArea";
+            this.textTitleArea.Size = new System.Drawing.Size(96, 15);
+            this.textTitleArea.TabIndex = 11;
+            this.textTitleArea.Text = "Area:";
+            // 
+            // textTriAResult
+            // 
+            this.textTriAResult.BackColor = System.Drawing.SystemColors.Control;
+            this.textTriAResult.Location = new System.Drawing.Point(404, 44);
+            this.textTriAResult.Name = "textTriAResult";
+            this.textTriAResult.ReadOnly = true;
+            this.textTriAResult.Size = new System.Drawing.Size(170, 22);
+            this.textTriAResult.TabIndex = 10;
+            this.textTriAResult.Text = "0";
+            // 
+            // tabPageQuad
+            // 
+            this.tabPageQuad.BackColor = System.Drawing.SystemColors.Control;
+            this.tabPageQuad.Controls.Add(this.textBoxX2);
+            this.tabPageQuad.Controls.Add(this.textBoxX1);
+            this.tabPageQuad.Controls.Add(this.textTitleX);
+            this.tabPageQuad.Controls.Add(this.textWarningQuad);
+            this.tabPageQuad.Controls.Add(this.imgQuad);
+            this.tabPageQuad.Location = new System.Drawing.Point(4, 25);
+            this.tabPageQuad.Name = "tabPageQuad";
+            this.tabPageQuad.Size = new System.Drawing.Size(594, 424);
+            this.tabPageQuad.TabIndex = 3;
+            this.tabPageQuad.Text = "Quadratic equation";
+            // 
+            // textBoxX2
+            // 
+            this.textBoxX2.BackColor = System.Drawing.SystemColors.Control;
+            this.textBoxX2.Font = new System.Drawing.Font("Microsoft Sans Serif", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxX2.Location = new System.Drawing.Point(197, 294);
+            this.textBoxX2.Name = "textBoxX2";
+            this.textBoxX2.ReadOnly = true;
+            this.textBoxX2.Size = new System.Drawing.Size(370, 98);
+            this.textBoxX2.TabIndex = 16;
+            // 
+            // textBoxX1
+            // 
+            this.textBoxX1.BackColor = System.Drawing.SystemColors.Control;
+            this.textBoxX1.Font = new System.Drawing.Font("Microsoft Sans Serif", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxX1.Location = new System.Drawing.Point(197, 158);
+            this.textBoxX1.Name = "textBoxX1";
+            this.textBoxX1.ReadOnly = true;
+            this.textBoxX1.Size = new System.Drawing.Size(370, 98);
+            this.textBoxX1.TabIndex = 15;
+            // 
+            // textTitleX
+            // 
+            this.textTitleX.BackColor = System.Drawing.SystemColors.Control;
+            this.textTitleX.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textTitleX.Font = new System.Drawing.Font("Microsoft Sans Serif", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textTitleX.Location = new System.Drawing.Point(31, 233);
+            this.textTitleX.Name = "textTitleX";
+            this.textTitleX.ReadOnly = true;
+            this.textTitleX.Size = new System.Drawing.Size(143, 91);
+            this.textTitleX.TabIndex = 14;
+            this.textTitleX.Text = "X=";
+            // 
+            // textWarningQuad
+            // 
+            this.textWarningQuad.BackColor = System.Drawing.SystemColors.Control;
+            this.textWarningQuad.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textWarningQuad.ForeColor = System.Drawing.Color.Red;
+            this.textWarningQuad.Location = new System.Drawing.Point(9, 110);
+            this.textWarningQuad.Multiline = true;
+            this.textWarningQuad.Name = "textWarningQuad";
+            this.textWarningQuad.ReadOnly = true;
+            this.textWarningQuad.ShortcutsEnabled = false;
+            this.textWarningQuad.Size = new System.Drawing.Size(577, 31);
+            this.textWarningQuad.TabIndex = 13;
+            // 
             // imgCircle
             // 
-            this.imgCircle.BackgroundImage = global::MathematicalFormulas.Properties.Resources.Circle;
+            this.imgCircle.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("imgCircle.BackgroundImage")));
             this.imgCircle.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.imgCircle.Controls.Add(this.radioButtonRad);
             this.imgCircle.Controls.Add(this.radioButtonDia);
@@ -208,54 +360,9 @@
             this.textRadius.TextChanged += new System.EventHandler(this.textRadius_TextChanged);
             this.textRadius.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textRadius_KeyPress);
             // 
-            // tabPageHemis
-            // 
-            this.tabPageHemis.Controls.Add(this.textHemiVResult);
-            this.tabPageHemis.Controls.Add(this.textTitleHemiV);
-            this.tabPageHemis.Controls.Add(this.textWarningHemi);
-            this.tabPageHemis.Controls.Add(this.imgHemisphere);
-            this.tabPageHemis.Location = new System.Drawing.Point(4, 25);
-            this.tabPageHemis.Name = "tabPageHemis";
-            this.tabPageHemis.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageHemis.Size = new System.Drawing.Size(594, 424);
-            this.tabPageHemis.TabIndex = 1;
-            this.tabPageHemis.Text = "Volume of a hemisphere";
-            // 
-            // textHemiVResult
-            // 
-            this.textHemiVResult.BackColor = System.Drawing.SystemColors.Control;
-            this.textHemiVResult.Location = new System.Drawing.Point(404, 44);
-            this.textHemiVResult.Name = "textHemiVResult";
-            this.textHemiVResult.ReadOnly = true;
-            this.textHemiVResult.Size = new System.Drawing.Size(170, 22);
-            this.textHemiVResult.TabIndex = 9;
-            // 
-            // textTitleHemiV
-            // 
-            this.textTitleHemiV.BackColor = System.Drawing.SystemColors.Control;
-            this.textTitleHemiV.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textTitleHemiV.Location = new System.Drawing.Point(405, 23);
-            this.textTitleHemiV.Name = "textTitleHemiV";
-            this.textTitleHemiV.Size = new System.Drawing.Size(96, 15);
-            this.textTitleHemiV.TabIndex = 8;
-            this.textTitleHemiV.Text = "Volume:";
-            // 
-            // textWarningHemi
-            // 
-            this.textWarningHemi.BackColor = System.Drawing.SystemColors.Control;
-            this.textWarningHemi.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textWarningHemi.ForeColor = System.Drawing.Color.Red;
-            this.textWarningHemi.Location = new System.Drawing.Point(403, 197);
-            this.textWarningHemi.Multiline = true;
-            this.textWarningHemi.Name = "textWarningHemi";
-            this.textWarningHemi.ReadOnly = true;
-            this.textWarningHemi.ShortcutsEnabled = false;
-            this.textWarningHemi.Size = new System.Drawing.Size(188, 102);
-            this.textWarningHemi.TabIndex = 7;
-            // 
             // imgHemisphere
             // 
-            this.imgHemisphere.BackgroundImage = global::MathematicalFormulas.Properties.Resources.hemisphere001;
+            this.imgHemisphere.BackgroundImage = global::MathematicalFormulas.Properties.Resources.Hemisphere;
             this.imgHemisphere.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.imgHemisphere.Controls.Add(this.textHemiRadius);
             this.imgHemisphere.Location = new System.Drawing.Point(8, 23);
@@ -272,55 +379,9 @@
             this.textHemiRadius.TextChanged += new System.EventHandler(this.textHemiRadius_TextChanged);
             this.textHemiRadius.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textHemiRadius_KeyPress);
             // 
-            // tabPageTri
-            // 
-            this.tabPageTri.BackColor = System.Drawing.SystemColors.Control;
-            this.tabPageTri.Controls.Add(this.textWarningTri);
-            this.tabPageTri.Controls.Add(this.textTitleArea);
-            this.tabPageTri.Controls.Add(this.textTriAResult);
-            this.tabPageTri.Controls.Add(this.panel1);
-            this.tabPageTri.Location = new System.Drawing.Point(4, 25);
-            this.tabPageTri.Name = "tabPageTri";
-            this.tabPageTri.Size = new System.Drawing.Size(594, 424);
-            this.tabPageTri.TabIndex = 2;
-            this.tabPageTri.Text = "Area of triangle";
-            // 
-            // textWarningTri
-            // 
-            this.textWarningTri.BackColor = System.Drawing.SystemColors.Control;
-            this.textWarningTri.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textWarningTri.ForeColor = System.Drawing.Color.Red;
-            this.textWarningTri.Location = new System.Drawing.Point(403, 197);
-            this.textWarningTri.Multiline = true;
-            this.textWarningTri.Name = "textWarningTri";
-            this.textWarningTri.ReadOnly = true;
-            this.textWarningTri.ShortcutsEnabled = false;
-            this.textWarningTri.Size = new System.Drawing.Size(188, 102);
-            this.textWarningTri.TabIndex = 12;
-            // 
-            // textTitleArea
-            // 
-            this.textTitleArea.BackColor = System.Drawing.SystemColors.Control;
-            this.textTitleArea.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textTitleArea.Location = new System.Drawing.Point(405, 23);
-            this.textTitleArea.Name = "textTitleArea";
-            this.textTitleArea.Size = new System.Drawing.Size(96, 15);
-            this.textTitleArea.TabIndex = 11;
-            this.textTitleArea.Text = "Area:";
-            // 
-            // textTriAResult
-            // 
-            this.textTriAResult.BackColor = System.Drawing.SystemColors.Control;
-            this.textTriAResult.Location = new System.Drawing.Point(404, 44);
-            this.textTriAResult.Name = "textTriAResult";
-            this.textTriAResult.ReadOnly = true;
-            this.textTriAResult.Size = new System.Drawing.Size(170, 22);
-            this.textTriAResult.TabIndex = 10;
-            this.textTriAResult.Text = "0";
-            // 
             // panel1
             // 
-            this.panel1.BackgroundImage = global::MathematicalFormulas.Properties.Resources.main_qimg_7906ce871f722c4bd826483c828c2343;
+            this.panel1.BackgroundImage = global::MathematicalFormulas.Properties.Resources.Triangle;
             this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.panel1.Controls.Add(this.textTriB);
             this.panel1.Controls.Add(this.textTriC);
@@ -357,36 +418,9 @@
             this.textTriA.TextChanged += new System.EventHandler(this.textTriangleInput_TextChanged);
             this.textTriA.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textTriLength_KeyPress);
             // 
-            // tabPageQuad
-            // 
-            this.tabPageQuad.BackColor = System.Drawing.SystemColors.Control;
-            this.tabPageQuad.Controls.Add(this.textBoxX2);
-            this.tabPageQuad.Controls.Add(this.textBoxX1);
-            this.tabPageQuad.Controls.Add(this.textTitleX);
-            this.tabPageQuad.Controls.Add(this.textWarningQuad);
-            this.tabPageQuad.Controls.Add(this.imgQuad);
-            this.tabPageQuad.Location = new System.Drawing.Point(4, 25);
-            this.tabPageQuad.Name = "tabPageQuad";
-            this.tabPageQuad.Size = new System.Drawing.Size(594, 424);
-            this.tabPageQuad.TabIndex = 3;
-            this.tabPageQuad.Text = "Quadratic equation";
-            // 
-            // textWarningQuad
-            // 
-            this.textWarningQuad.BackColor = System.Drawing.SystemColors.Control;
-            this.textWarningQuad.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textWarningQuad.ForeColor = System.Drawing.Color.Red;
-            this.textWarningQuad.Location = new System.Drawing.Point(9, 110);
-            this.textWarningQuad.Multiline = true;
-            this.textWarningQuad.Name = "textWarningQuad";
-            this.textWarningQuad.ReadOnly = true;
-            this.textWarningQuad.ShortcutsEnabled = false;
-            this.textWarningQuad.Size = new System.Drawing.Size(577, 31);
-            this.textWarningQuad.TabIndex = 13;
-            // 
             // imgQuad
             // 
-            this.imgQuad.BackgroundImage = global::MathematicalFormulas.Properties.Resources.无标题;
+            this.imgQuad.BackgroundImage = global::MathematicalFormulas.Properties.Resources.QuadEquation;
             this.imgQuad.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.imgQuad.Controls.Add(this.textQuadC);
             this.imgQuad.Controls.Add(this.textQuadB);
@@ -426,38 +460,6 @@
             this.textQuadA.TextChanged += new System.EventHandler(this.textQuadInput_TextChanged);
             this.textQuadA.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textQuad_KeyPress);
             // 
-            // textTitleX
-            // 
-            this.textTitleX.BackColor = System.Drawing.SystemColors.Control;
-            this.textTitleX.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textTitleX.Font = new System.Drawing.Font("Microsoft Sans Serif", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textTitleX.Location = new System.Drawing.Point(31, 233);
-            this.textTitleX.Name = "textTitleX";
-            this.textTitleX.ReadOnly = true;
-            this.textTitleX.Size = new System.Drawing.Size(143, 91);
-            this.textTitleX.TabIndex = 14;
-            this.textTitleX.Text = "X=";
-            // 
-            // textBoxX1
-            // 
-            this.textBoxX1.BackColor = System.Drawing.SystemColors.Control;
-            this.textBoxX1.Font = new System.Drawing.Font("Microsoft Sans Serif", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxX1.Location = new System.Drawing.Point(197, 158);
-            this.textBoxX1.Name = "textBoxX1";
-            this.textBoxX1.ReadOnly = true;
-            this.textBoxX1.Size = new System.Drawing.Size(370, 98);
-            this.textBoxX1.TabIndex = 15;
-            // 
-            // textBoxX2
-            // 
-            this.textBoxX2.BackColor = System.Drawing.SystemColors.Control;
-            this.textBoxX2.Font = new System.Drawing.Font("Microsoft Sans Serif", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxX2.Location = new System.Drawing.Point(197, 294);
-            this.textBoxX2.Name = "textBoxX2";
-            this.textBoxX2.ReadOnly = true;
-            this.textBoxX2.Size = new System.Drawing.Size(370, 98);
-            this.textBoxX2.TabIndex = 16;
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
@@ -470,18 +472,18 @@
             this.tab_Formulas.ResumeLayout(false);
             this.tabPageCircle.ResumeLayout(false);
             this.tabPageCircle.PerformLayout();
-            this.imgCircle.ResumeLayout(false);
-            this.imgCircle.PerformLayout();
             this.tabPageHemis.ResumeLayout(false);
             this.tabPageHemis.PerformLayout();
-            this.imgHemisphere.ResumeLayout(false);
-            this.imgHemisphere.PerformLayout();
             this.tabPageTri.ResumeLayout(false);
             this.tabPageTri.PerformLayout();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
             this.tabPageQuad.ResumeLayout(false);
             this.tabPageQuad.PerformLayout();
+            this.imgCircle.ResumeLayout(false);
+            this.imgCircle.PerformLayout();
+            this.imgHemisphere.ResumeLayout(false);
+            this.imgHemisphere.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.imgQuad.ResumeLayout(false);
             this.imgQuad.PerformLayout();
             this.ResumeLayout(false);

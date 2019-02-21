@@ -161,7 +161,7 @@ namespace MathematicalFormulas
             {
                 textHemiVResult.Text = "0";
             }
-                if (Double.TryParse(textHemiRadius.Text, out hemiRadius))
+            if (Double.TryParse(textHemiRadius.Text, out hemiRadius))
             {
                 hemiVolume = GetHemiVol(hemiRadius);
                 textHemiVResult.Text = $"{hemiVolume:F3}";
@@ -178,19 +178,19 @@ namespace MathematicalFormulas
         // Any of the 3 text changed
         private void textTriangleInput_TextChanged(object sender, EventArgs e)
         {
-            if(double.TryParse(textTriA.Text, out a) && double.TryParse(textTriB.Text, out b) && double.TryParse(textTriC.Text, out c))
+            if (double.TryParse(textTriA.Text, out a) && double.TryParse(textTriB.Text, out b) && double.TryParse(textTriC.Text, out c))
             {
-                if(a == 0 || b == 0 || c == 0)
+                if (a == 0 || b == 0 || c == 0)
                 {
                     textWarningTri.Text = "Length cannot be 0.";
                 }
-                else if(a>b+c && b>a+c && c>a+b)
+                else if (a >= b + c || b >= a + c || c >= a + b)
                 {
-                    textWarningTri.Text = "One side cannot be longer than the other two sides combined.";
+                    textWarningTri.Text = "One side cannot be longer than or equal to the other two sides combined.";
                 }
                 else
                 {
-                    textTriAResult.Text = $"{GetTriArea(a,b,c):f3}";
+                    textTriAResult.Text = $"{GetTriArea(a, b, c):f3}";
                 }
 
             }
@@ -211,17 +211,17 @@ namespace MathematicalFormulas
             {
                 textWarningQuad.Text = "Please fill out all the numbers.";
             }
-            else if (!decimal.TryParse(textQuadA.Text, out quadA) || 
-                !decimal.TryParse(textQuadB.Text, out quadB) || 
-                !decimal.TryParse(textQuadC.Text, out quadC) )
+            else if (!decimal.TryParse(textQuadA.Text, out quadA) ||
+                !decimal.TryParse(textQuadB.Text, out quadB) ||
+                !decimal.TryParse(textQuadC.Text, out quadC))
             {
                 textWarningQuad.Text = "Failed to parse the numbers.";
             }
-            else if(quadA.Equals(0.0))
+            else if (quadA.Equals(0.0))
             {
                 textWarningQuad.Text = "a cannot be 0.";
             }
-            else if((quadB*quadB)-(4 * quadA * quadC) < 0)
+            else if ((quadB * quadB) - (4 * quadA * quadC) < 0)
             {
                 textWarningQuad.Text = "b^2 - 4ac cannot be less than 0.";
             }

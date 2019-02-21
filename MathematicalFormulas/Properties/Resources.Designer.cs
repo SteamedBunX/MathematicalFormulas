@@ -73,9 +73,9 @@ namespace MathematicalFormulas.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap hemisphere001 {
+        internal static System.Drawing.Bitmap Hemisphere {
             get {
-                object obj = ResourceManager.GetObject("hemisphere001", resourceCulture);
+                object obj = ResourceManager.GetObject("Hemisphere", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -83,9 +83,9 @@ namespace MathematicalFormulas.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap main_qimg_7906ce871f722c4bd826483c828c2343 {
+        internal static System.Drawing.Bitmap QuadEquation {
             get {
-                object obj = ResourceManager.GetObject("main-qimg-7906ce871f722c4bd826483c828c2343", resourceCulture);
+                object obj = ResourceManager.GetObject("QuadEquation", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -93,9 +93,9 @@ namespace MathematicalFormulas.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap 无标题 {
+        internal static System.Drawing.Bitmap Triangle {
             get {
-                object obj = ResourceManager.GetObject("无标题", resourceCulture);
+                object obj = ResourceManager.GetObject("Triangle", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
